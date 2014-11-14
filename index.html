@@ -39,14 +39,16 @@ developed using Eigen3 linear algebra library <a href="http://eigen.tuxfamily.or
 Copyright (c) 2013 - 2014 Vlad Gheorghiu, vgheorgh AT gmail DOT com.</p>
 
 <p>If anyone else is interesting in contributing please let me known. 
-There is still work left to be done, and I can provide you with more details about what I have in mind. 
-To contribute, you need to have a decent knowledge of C++ (preferably C++11), 
-including templates and STL, a basic knowledge of quantum computing and linear algebra, 
+There is still work left to be done, and I can provide you with more details 
+about what I have in mind. To contribute, you need to have a decent knowledge 
+of C++ (preferably C++11), including templates and STL, 
+a basic knowledge of quantum computing and linear algebra, 
 and some working experience with Eigen3.</p>
 
 <p>The ultimate goal of this project is to build a universal quantum simulator, 
-applicable to a vast majority of problems in quantum information/computation. 
-The simulator should be fast but nevertheless user-friendly for anyone with a basic knowledge of C/C++. </p>
+applicable to a vast majority of problems in quantum information/computation.
+The simulator should be fast but nevertheless user-friendly 
+for anyone with a basic knowledge of C/C++. </p>
 
 <hr>
 
@@ -140,8 +142,9 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <a id="building-using-cmake" class="anchor" href="#building-using-cmake" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <code>cmake</code>
 </h3>
 
-<p>The current version of the repository has a <code>CMakeLists.txt</code> configuration file for building using <code>cmake</code>
- (<code>cmake</code> needs to be installed). To build the project using <code>cmake</code>, I recommend an out-of-source build, 
+<p>The current version of the repository has a <code>CMakeLists.txt</code> configuration file 
+for building using <code>cmake</code> (<code>cmake</code> needs to be installed). To build the 
+project using <code>cmake</code>, I recommend an out-of-source build, 
  i.e., from the root of the project (where <code>./include</code> is located), type</p>
 
 <pre><code>mkdir ./build
@@ -169,9 +172,10 @@ cmake -DWITH_OPENMP=OFF
 make
 </code></pre>
 
-<p>To change the location of <code>Eigen3</code> library or the location of MATLAB installation, 
-edit the <code>CMakeLists.txt</code> file. See also <code>CMakeLists.txt</code> for additional options.
-Do not forget to remove everything from the <code>./build</code> directory before a fresh build!</p>
+<p>To change the location of <code>Eigen3</code> library or the location 
+of MATLAB installation, edit the <code>CMakeLists.txt</code> file. See also <code>CMakeLists
+.txt</code> for additional options. Do not forget to remove everything from the <code>
+./build</code> directory before a fresh build!</p>
 
 <h1></h1>
 
@@ -179,11 +183,12 @@ Do not forget to remove everything from the <code>./build</code> directory befor
 <a id="building-using-make" class="anchor" href="#building-using-make" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <code>make</code>
 </h3>
 
-<p>For convenience, the current version of the repository has also a set of Makefiles available 
-under the folder<code>./Makefile.examples</code>. To build the executable this way (without using <code>cmake</code>), 
-copy into the root of the project 
+<p>For convenience, the current version of the repository has also a set 
+of Makefiles available under the folder<code>./Makefile.examples</code>. To build the 
+executable this way (without using <code>cmake</code>), copy into the root of the project 
 an appropriate Makefile from <code>./Makefile.examples</code>, name it <code>Makefile</code>, 
-then type <code>make</code> (for release version) or <code>make debug</code> (for debug version) to produce the executable <code>qpp</code>.</p>
+then type <code>make</code> (for release version) or <code>make debug</code> (for debug version) 
+to produce the executable <code>qpp</code>.</p>
 
 <h1></h1>
 
@@ -192,11 +197,15 @@ then type <code>make</code> (for release version) or <code>make debug</code> (fo
 
 <ul>
 <li><p>The C++ compiler must be C++11 compliant.</p></li>
-<li><p>If your compiler does not support OpenMP (as it is the case e.g with <code>clang++</code>), disable it in your build, as the linker may not find the <code>gomp</code> library.</p></li>
+<li><p>If your compiler does not support OpenMP 
+(as it is the case e.g with <code>clang++</code>), disable OpenMP it in your build, 
+as otherwise the linker may not find the <code>gomp</code> library.</p></li>
 <li>
-<p>If you want to run the program on OS X with MATLAB support, make sure that the environment variable 
-<code>DYLD_LIBRARY_PATH</code> is set to point to the MATLAB compiler library location, see the <code>run_OSX_MATLAB</code> script. 
-Example of run command from inside the directory where the executable <code>qpp</code> is located:</p>
+<p>If you run the program on OS X with MATLAB support, make sure that 
+the environment variable <code>DYLD_LIBRARY_PATH</code> is set to point to the MATLAB 
+compiler library location, see the <code>run_OSX_MATLAB</code> script. 
+Example of run command from inside the directory where 
+the executable <code>qpp</code> is located:</p>
 
 <pre><code>export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:\
 "/Applications/MATLAB_R2014b.app/bin/maci64" ; ./qpp
@@ -204,6 +213,10 @@ Example of run command from inside the directory where the executable <code>qpp<
 
 <p>Otherwise, you will get a runtime error like <code>dyld: Library not loaded: @rpath/libmat.dylib</code></p>
 </li>
+<li><p>If you build a debug version with <code>g++</code> under OS X and use <code>gdb</code> to step 
+inside template functions you may want to add <code>-fno-weak</code> compiler flag. See 
+<a href="http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks">http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks</a>
+for more details about this problem.</p></li>
 <li><p><code>Makefiles.examples</code> and <code>CMakeLists.txt</code> are provided for convenience.
 The final version of the library will consist only of header files, 
 and it is the user's responsability to create an appropriate build system.</p></li>
