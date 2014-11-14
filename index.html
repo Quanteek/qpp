@@ -97,25 +97,41 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <h4>
 <a id="release-version-without-matlab-support" class="anchor" href="#release-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (without MATLAB support):</h4>
 
-<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp -mtune=native -msse3 -O3 -DNDEBUG -DEIGEN_NO_DEBUG -isystem $HOME/eigen_3.2.2 -I$HOME/qpp/include example.cpp -o qpp
+<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
+     -mtune=native -msse3 -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
+     -isystem $HOME/eigen_3.2.2 -I$HOME/qpp/include \
+     example.cpp -o qpp
 </code></pre>
 
 <h4>
 <a id="debug-version-without-matlab-support" class="anchor" href="#debug-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (without MATLAB support):</h4>
 
-<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp -mtune=native -msse3 -g3 -DDEBUG -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include example.cpp -o qpp
+<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
+     -mtune=native -msse3 -g3 -DDEBUG \
+     -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
+      example.cpp -o qpp
 </code></pre>
 
 <h4>
 <a id="release-version-with-matlab-support" class="anchor" href="#release-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (with MATLAB support):</h4>
 
-<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp -mtune=native -msse3 -O3 -DNDEBUG -DEIGEN_NO_DEBUG -isystem $HOME/eigen_3.2.2 -I$HOME/qpp/include -I/Applications/MATLAB_R2014b.app/extern/include -L/Applications/MATLAB_R2014b.app/bin/maci64 -lmx -lmat example.cpp -o qpp
+<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
+     -mtune=native -msse3 -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
+     -isystem $HOME/eigen_3.2.2 -I$HOME/qpp/include \
+     -I/Applications/MATLAB_R2014b.app/extern/include \
+     -L/Applications/MATLAB_R2014b.app/bin/maci64 \
+     -lmx -lmat example.cpp -o qpp
 </code></pre>
 
 <h4>
 <a id="debug-version-with-matlab-support" class="anchor" href="#debug-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (with MATLAB support):</h4>
 
-<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp -mtune=native -msse3 -g3 -DDEBUG -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include -I /Applications/MATLAB_R2014b.app/extern/include -L /Applications/MATLAB_R2014b.app/bin/maci64 -lmx -lmat example.cpp -o qpp
+<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
+     -mtune=native -msse3 -g3 -DDEBUG \
+     -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
+     -I /Applications/MATLAB_R2014b.app/extern/include \
+     -L /Applications/MATLAB_R2014b.app/bin/maci64 \
+     -lmx -lmat example.cpp -o qpp
 </code></pre>
 
 <h1></h1>
@@ -182,7 +198,8 @@ then type <code>make</code> (for release version) or <code>make debug</code> (fo
 <code>DYLD_LIBRARY_PATH</code> is set to point to the MATLAB compiler library location, see the <code>run_OSX_MATLAB</code> script. 
 Example of run command from inside the directory where the executable <code>qpp</code> is located:</p>
 
-<pre><code>export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Applications/MATLAB_R2014b.app/bin/maci64"; ./qpp
+<pre><code>export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:\
+    "/Applications/MATLAB_R2014b.app/bin/maci64" ; ./qpp
 </code></pre>
 
 <p>Otherwise, you will get a runtime error like <code>dyld: Library not loaded: @rpath/libmat.dylib</code></p>
