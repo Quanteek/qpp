@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Quantum++ : C++11 quantum computing library">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Quantum++</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/vsoftco/qpp">View on GitHub</a>
+
+          <h1 id="project_title">Quantum++</h1>
+          <h2 id="project_tagline">C++11 quantum computing library</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/vsoftco/qpp/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/vsoftco/qpp/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="quantum" class="anchor" href="#quantum" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quantum++</h1>
+
+<p>Quantum++ is a template-based header-only C++11 quantum computing library, 
+developed using Eigen3 linear algebra library <a href="http://eigen.tuxfamily.org/">http://eigen.tuxfamily.org/</a>. 
+Copyright (c) 2013 - 2014 Vlad Gheorghiu, vgheorgh AT gmail DOT com.</p>
+
+<p>If anyone else is interesting in contributing please let me known. 
+There is still work left to be done, and I can provide you with more details about what I have in mind. 
+To contribute, you need to have a decent knowledge of C++ (preferably C++11), 
+including templates and STL, a basic knowledge of quantum computing and linear algebra, 
+and some working experience with Eigen3.</p>
+
+<p>The ultimate goal of this project is to build a universal quantum simulator, 
+applicable to a vast majority of problems in quantum information/computation. 
+The simulator should be fast but nevertheless user-friendly for anyone with a basic knowledge of C/C++. </p>
+
+<hr>
+
+<p>Quantum++ is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.</p>
+
+<p>Quantum++ is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License
+along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
+
+<hr>
+
+<h2>
+<a id="building-instructions" class="anchor" href="#building-instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building instructions</h2>
+
+<h3>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration:</h3>
+
+<ul>
+<li>Compiler: <code>g++</code> &gt;= 4.7 (for C++11 support)</li>
+<li>Eigen3 library located in <code>$HOME/eigen_3.2.2</code>
+</li>
+<li>Quantum++ library located in <code>$HOME/qpp</code>
+</li>
+<li>MATLAB compiler include header files: <code>/Applications/MATLAB_R2014b.app/extern/include</code>
+</li>
+<li>MATLAB compiler shared library files: <code>/Applications/MATLAB_R2014b.app/bin/maci64</code>
+</li>
+</ul>
+
+<h1></h1>
+
+<h3>
+<a id="building-instructions-for-g" class="anchor" href="#building-instructions-for-g" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building instructions for <code>g++</code>
+</h3>
+
+<ul>
+<li>Example file: <code>example.cpp</code> (current folder, from where <code>g++</code> is run)</li>
+<li>Output binary: <code>qpp</code> (current folder, from where <code>g++</code> is run)</li>
+</ul>
+
+<h4>
+<a id="release-version-without-matlab-support" class="anchor" href="#release-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (without MATLAB support):</h4>
+
+<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp -mtune=native -msse3 -O3 -DNDEBUG -DEIGEN_NO_DEBUG -isystem $HOME/eigen_3.2.2 -I$HOME/qpp/include example.cpp -o qpp
+</code></pre>
+
+<h4>
+<a id="debug-version-without-matlab-support" class="anchor" href="#debug-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (without MATLAB support):</h4>
+
+<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp -mtune=native -msse3 -g3 -DDEBUG -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include example.cpp -o qpp
+</code></pre>
+
+<h4>
+<a id="release-version-with-matlab-support" class="anchor" href="#release-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (with MATLAB support):</h4>
+
+<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp -mtune=native -msse3 -O3 -DNDEBUG -DEIGEN_NO_DEBUG -isystem $HOME/eigen_3.2.2 -I$HOME/qpp/include -I/Applications/MATLAB_R2014b.app/extern/include -L/Applications/MATLAB_R2014b.app/bin/maci64 -lmx -lmat example.cpp -o qpp
+</code></pre>
+
+<h4>
+<a id="debug-version-with-matlab-support" class="anchor" href="#debug-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (with MATLAB support):</h4>
+
+<pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp -mtune=native -msse3 -g3 -DDEBUG -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include -I /Applications/MATLAB_R2014b.app/extern/include -L /Applications/MATLAB_R2014b.app/bin/maci64 -lmx -lmat example.cpp -o qpp
+</code></pre>
+
+<h1></h1>
+
+<h3>
+<a id="building-using-cmake" class="anchor" href="#building-using-cmake" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <code>cmake</code>
+</h3>
+
+<p>The current version of the repository has a <code>CMakeLists.txt</code> configuration file for building using <code>cmake</code>
+ (<code>cmake</code> needs to be installed). To build the project using <code>cmake</code>, I recommend an out-of-source build, 
+ i.e., from the root of the project (where <code>./include</code> is located), type</p>
+
+<pre><code>mkdir ./build
+cd ./build
+cmake ..
+make
+</code></pre>
+
+<p>The above commands build the relase version (default) executable <code>qpp</code>, 
+without MATLAB support (default), inside the directory <code>./build</code>. 
+To build a different configuration, e.g. debug version with MATLAB support, 
+type from the root of the project</p>
+
+<pre><code>cd ./build
+rm -rf *
+cmake -DCMAKE_BUILD_TYPE=Debug -DWITH_MATLAB=ON
+make
+</code></pre>
+
+<p>Or, to disable OpenMP support (enabled by default), type</p>
+
+<pre><code>cd ./build
+rm -rf *
+cmake -DWITH_OPENMP=OFF
+make
+</code></pre>
+
+<p>To change the location of <code>Eigen3</code> library or the location of MATLAB installation, 
+edit the <code>CMakeLists.txt</code> file. See also <code>CMakeLists.txt</code> for additional options.
+Do not forget to remove everything from the <code>./build</code> directory before a fresh build!</p>
+
+<h1></h1>
+
+<h3>
+<a id="building-using-make" class="anchor" href="#building-using-make" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <code>make</code>
+</h3>
+
+<p>For convenience, the current version of the repository has also a set of Makefiles available 
+under the folder<code>./Makefile.examples</code>. To build the executable this way (without using <code>cmake</code>), 
+copy into the root of the project 
+an appropriate Makefile from <code>./Makefile.examples</code>, name it <code>Makefile</code>, 
+then type <code>make</code> (for release version) or <code>make debug</code> (for debug version) to produce the executable <code>qpp</code>.</p>
+
+<h1></h1>
+
+<h3>
+<a id="additional-remarks" class="anchor" href="#additional-remarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional remarks</h3>
+
+<ul>
+<li><p>The C++ compiler must be C++11 compliant.</p></li>
+<li><p>If your compiler does not support OpenMP (as it is the case e.g with <code>clang++</code>), disable it in your build, as the linker may not find <code>gomp</code> library.</p></li>
+<li>
+<p>If you want to run the program on OS X with MATLAB support, make sure that the environment variable 
+<code>DYLD_LIBRARY_PATH</code> is set to point to the MATLAB compiler library location, see the <code>run_OSX_MATLAB</code> script. 
+Example of run command from inside the directory where the executable <code>qpp</code> is located:</p>
+
+<pre><code>export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Applications/MATLAB_R2014b.app/bin/maci64"; ./qpp
+</code></pre>
+
+<p>Otherwise, you will get a runtime error like <code>dyld: Library not loaded: @rpath/libmat.dylib</code></p>
+</li>
+<li><p><code>Makefiles.examples</code> and <code>CMakeLists.txt</code> are provided for convenience.
+The final version of the library will consist only of header files, 
+and it is the user's responsability to create an appropriate build system.</p></li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Quantum++ maintained by <a href="https://github.com/vsoftco">vsoftco</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
