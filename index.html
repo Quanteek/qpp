@@ -211,7 +211,8 @@ the executable <code>qpp</code> is located:</p>
 "/Applications/MATLAB_R2014b.app/bin/maci64" ; ./qpp
 </code></pre>
 
-<p>Otherwise, you will get a runtime error like <code>dyld: Library not loaded: @rpath/libmat.dylib</code></p>
+<p>Otherwise, you will get a runtime error like 
+<code>dyld: Library not loaded: @rpath/libmat.dylib</code></p>
 </li>
 <li><p>If you build a debug version with <code>g++</code> under OS X and use <code>gdb</code> to step 
 inside template functions you may want to add <code>-fno-weak</code> compiler flag. See 
