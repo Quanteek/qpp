@@ -95,7 +95,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 
 <ul>
 <li>Example file: <code>example.cpp</code> (current folder, from where <code>g++</code> is run)</li>
-<li>Output binary: <code>qpp</code> (current folder, from where <code>g++</code> is run)</li>
+<li>Output executable: <code>qpp</code> (current folder, from where <code>g++</code> is run)</li>
 </ul>
 
 <h4>
@@ -162,7 +162,7 @@ type from the root of the project</p>
 
 <pre><code>cd ./build
 rm -rf *
-cmake -DCMAKE_BUILD_TYPE=Debug -DWITH_MATLAB=ON
+cmake -DCMAKE_BUILD_TYPE=Debug -DWITH_MATLAB=ON ..
 make
 </code></pre>
 
@@ -170,7 +170,7 @@ make
 
 <pre><code>cd ./build
 rm -rf *
-cmake -DWITH_OPENMP=OFF
+cmake -DWITH_OPENMP=OFF ..
 make
 </code></pre>
 
@@ -206,15 +206,22 @@ as otherwise the linker may not find the <code>gomp</code> library.</p></li>
 <p>If you run the program on OS X with MATLAB support, make sure that 
 the environment variable <code>DYLD_LIBRARY_PATH</code> is set to point to the MATLAB 
 compiler library location, see the <code>run_OSX_MATLAB</code> script. 
-Example of run command from inside the directory where 
+Example of running script, run from inside the directory where 
 the executable <code>qpp</code> is located:</p>
 
-<pre><code>export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:\
-"/Applications/MATLAB_R2014b.app/bin/maci64" ; ./qpp
+<pre><code>#!/bin/sh # Run Quantum++ under OS X with MATLAB support
+
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Applications/MATLAB_R2014b.app/bin/maci64"
+./qpp
 </code></pre>
 
 <p>Otherwise, you will get a runtime error like 
-<code>dyld: Library not loaded: @rpath/libmat.dylib</code></p>
+<code>dyld: Library not loaded: @rpath/libmat.dylib</code>
+PS: I recommend running via a script, as otherwise setting the 
+<code>DYLD_LIBRARY_PATH</code> globably may interfere with Macports <code>cmake</code> installation
+(in case you use <code>cmake</code> from <code>macports</code>). If you use a script, then the 
+environment variable is local to the script and does not interfere 
+with the rest of the system.</p>
 </li>
 <li><p>If you build a debug version with <code>g++</code> under OS X and use <code>gdb</code> to step 
 inside template functions you may want to add <code>-fno-weak</code> compiler flag. See 
