@@ -94,8 +94,8 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </h3>
 
 <ul>
-<li>Example file: <code>example.cpp</code> (current folder, from where <code>g++</code> is run)</li>
-<li>Output executable: <code>qpp</code> (current folder, from where <code>g++</code> is run)</li>
+<li>Example file: <code>example.cpp</code> (current directory, from where <code>g++</code> is run)</li>
+<li>Output executable: <code>qpp</code> (current directory, from where <code>g++</code> is run)</li>
 </ul>
 
 <h4>
@@ -186,7 +186,7 @@ of MATLAB installation, edit the <code>CMakeLists.txt</code> file. See also <cod
 </h3>
 
 <p>For convenience, the current version of the repository has also a set 
-of Makefiles available under the folder<code>./Makefile.examples</code>. To build the 
+of Makefiles available under the directory<code>./Makefile.examples</code>. To build the 
 executable this way (without using <code>cmake</code>), copy into the root of the project 
 an appropriate Makefile from <code>./Makefile.examples</code>, name it <code>Makefile</code>, 
 then type <code>make</code> (for release version) or <code>make debug</code> (for debug version) 
@@ -211,10 +211,10 @@ Otherwise, you will get a runtime error like
 
 <ul>
 <li><p>I recommend running via a script, as otherwise setting the 
-<code>DYLD_LIBRARY_PATH</code> globably may interfere with Macports <code>cmake</code> installation
-(in case you use <code>cmake</code> from <code>macports</code>). If you use a script, then the 
-environment variable is local to the script and does not interfere 
-with the rest of the system.</p></li>
+<code>DYLD_LIBRARY_PATH</code> globally may interfere with Macports' <code>cmake</code> 
+installation (in case you use <code>cmake</code> from <code>macports</code>). If you use a 
+script, then the environment variable is local to the script and does not
+interfere with the rest of the system.</p></li>
 <li>
 <p>Example of running script, run from inside the directory where 
 the executable <code>qpp</code> is located:</p>
