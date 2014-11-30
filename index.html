@@ -102,7 +102,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <a id="release-version-without-matlab-support" class="anchor" href="#release-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (without MATLAB support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
-     -mtune=native -msse3 -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
+     -mtune=native -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
      -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
      example.cpp -o qpp
 </code></pre>
@@ -111,7 +111,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <a id="debug-version-without-matlab-support" class="anchor" href="#debug-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (without MATLAB support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
-     -mtune=native -msse3 -g3 -DDEBUG \
+     -mtune=native -g3 -DDEBUG \
      -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
       example.cpp -o qpp
 </code></pre>
@@ -120,7 +120,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <a id="release-version-with-matlab-support" class="anchor" href="#release-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (with MATLAB support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
-     -mtune=native -msse3 -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
+     -mtune=native -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
      -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
      -I/Applications/MATLAB_R2014b.app/extern/include \
      -L/Applications/MATLAB_R2014b.app/bin/maci64 \
@@ -131,7 +131,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <a id="debug-version-with-matlab-support" class="anchor" href="#debug-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (with MATLAB support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
-     -mtune=native -msse3 -g3 -DDEBUG \
+     -mtune=native -g3 -DDEBUG \
      -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
      -I /Applications/MATLAB_R2014b.app/extern/include \
      -L /Applications/MATLAB_R2014b.app/bin/maci64 \
