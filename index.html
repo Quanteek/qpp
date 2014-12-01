@@ -94,8 +94,11 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </h3>
 
 <ul>
-<li>Example file: <code>example.cpp</code> (current directory, from where <code>g++</code> is run)</li>
-<li>Output executable: <code>qpp</code> (current directory, from where <code>g++</code> is run)</li>
+<li>Example file: <code>$HOME/qpp/examples/example.cpp</code>
+</li>
+<li>Output executable: <code>$HOME/qpp/examples/example</code>
+</li>
+<li>Must run the commands below from inside the directory <code>$HOME/qpp/examples</code> </li>
 </ul>
 
 <h4>
@@ -104,7 +107,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
      -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
-     example.cpp -o qpp
+     example.cpp -o example
 </code></pre>
 
 <h4>
@@ -113,7 +116,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -g3 -DDEBUG \
      -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
-      example.cpp -o qpp
+      example.cpp -o example
 </code></pre>
 
 <h4>
@@ -124,7 +127,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
      -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
      -I/Applications/MATLAB_R2014b.app/extern/include \
      -L/Applications/MATLAB_R2014b.app/bin/maci64 \
-     -lmx -lmat example.cpp -o qpp
+     -lmx -lmat example.cpp -o example
 </code></pre>
 
 <h4>
@@ -135,7 +138,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
      -isystem $HOME/eigen_3.2.2 -I $HOME/qpp/include \
      -I /Applications/MATLAB_R2014b.app/extern/include \
      -L /Applications/MATLAB_R2014b.app/bin/maci64 \
-     -lmx -lmat example.cpp -o qpp
+     -lmx -lmat example.cpp -o example
 </code></pre>
 
 <h1></h1>
@@ -145,8 +148,8 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </h3>
 
 <p>The current version of the repository has a <code>CMakeLists.txt</code> configuration file 
-for building using <code>cmake</code> (<code>cmake</code> needs to be installed). To build the 
-project using <code>cmake</code>, I recommend an out-of-source build, 
+for building examples using <code>cmake</code> (<code>cmake</code> needs to be installed). To build an 
+example using <code>cmake</code>, I recommend an out-of-source build, 
  i.e., from the root of the project (where <code>./include</code> is located), type</p>
 
 <pre><code>mkdir ./build
@@ -156,6 +159,7 @@ make
 </code></pre>
 
 <p>The above commands build the relase version (default) executable <code>qpp</code>, 
+from the source file <code>./examples/example.cpp</code>,
 without MATLAB support (default), inside the directory <code>./build</code>. 
 To build a different configuration, e.g. debug version with MATLAB support, 
 type from the root of the project</p>
@@ -178,19 +182,6 @@ make
 of MATLAB installation, edit the <code>CMakeLists.txt</code> file. See also <code>CMakeLists
 .txt</code> for additional options. Do not forget to remove everything from the <code>
 ./build</code> directory before a fresh build!</p>
-
-<h1></h1>
-
-<h3>
-<a id="building-using-make" class="anchor" href="#building-using-make" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <code>make</code>
-</h3>
-
-<p>For convenience, the current version of the repository has also a set 
-of Makefiles available under the directory<code>./Makefile.examples</code>. To build the 
-executable this way (without using <code>cmake</code>), copy into the root of the project 
-an appropriate Makefile from <code>./Makefile.examples</code>, name it <code>Makefile</code>, 
-then type <code>make</code> (for release version) or <code>make debug</code> (for debug version) 
-to produce the executable <code>qpp</code>.</p>
 
 <h1></h1>
 
@@ -231,9 +222,6 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Applications/MATLAB_R2014b.app/bin
 inside template functions you may want to add <code>-fno-weak</code> compiler flag. See 
 <a href="http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks">http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks</a>
 for more details about this problem.</p></li>
-<li><p><code>Makefiles.examples</code> and <code>CMakeLists.txt</code> are provided for convenience.
-The final version of the library will consist only of header files, 
-and it is the user's responsability to create an appropriate build system.</p></li>
 </ul>
         </section>
 
