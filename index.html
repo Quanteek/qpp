@@ -65,8 +65,6 @@ GNU General Public License for more details.</p>
 <p>You should have received a copy of the GNU General Public License
 along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
 
-<hr>
-
 <h2>
 <a id="building-instructions" class="anchor" href="#building-instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building instructions</h2>
 
@@ -87,11 +85,8 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </li>
 </ul>
 
-<h1></h1>
-
 <h3>
-<a id="building-instructions-for-g" class="anchor" href="#building-instructions-for-g" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building instructions for <code>g++</code>
-</h3>
+<a id="building-instructions-for-g-without-a-build-system" class="anchor" href="#building-instructions-for-g-without-a-build-system" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building instructions for <code>g++</code> without a build system</h3>
 
 <ul>
 <li>Example file: <code>$HOME/qpp/examples/example.cpp</code>
@@ -141,8 +136,6 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
      -lmx -lmat example.cpp -o example
 </code></pre>
 
-<h1></h1>
-
 <h3>
 <a id="building-using-cmake" class="anchor" href="#building-using-cmake" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <code>cmake</code>
 </h3>
@@ -178,12 +171,12 @@ cmake -DWITH_OPENMP=OFF ..
 make
 </code></pre>
 
-<p>To change the location of <code>Eigen3</code> library or the location 
-of MATLAB installation, edit the <code>CMakeLists.txt</code> file. See also <code>CMakeLists
-.txt</code> for additional options. Do not forget to remove everything from the <code>
-./build</code> directory before a fresh build!</p>
-
-<h1></h1>
+<p>To change the name of the example file, the location of <code>Eigen3</code> 
+library or the location of MATLAB installation, 
+edit the <code>CMakeLists.txt</code> file. See also <code>CMakeLists.txt</code> 
+for additional options. 
+Do not forget to remove everything from the <code>./build</code> directory 
+before a fresh build!</p>
 
 <h3>
 <a id="additional-remarks" class="anchor" href="#additional-remarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional remarks</h3>
