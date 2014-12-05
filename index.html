@@ -45,7 +45,7 @@ For additional <a href="http://eigen.tuxfamily.org">Eigen 3</a> documentation se
 
 <p>Copyright (c) 2013 - 2014 Vlad Gheorghiu, vgheorgh AT gmail DOT com.</p>
 
-<p>If you are interesting in contributing please let me know. 
+<p>If you are interesting in contributing, please let me know. 
 There is still work left to be done, and I can provide you with more details 
 about what I have in mind. To contribute, you need to have a decent knowledge 
 of C++ (preferably C++11), including templates and the standard library, 
@@ -150,10 +150,10 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <a id="building-using-cmake" class="anchor" href="#building-using-cmake" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <code>cmake</code>
 </h3>
 
-<p>The current version of the repository has a <code>CMakeLists.txt</code> configuration file 
-for building examples using <code>cmake</code> (<code>cmake</code> needs to be installed). To build an 
-example using <code>cmake</code>, I recommend an out-of-source build, 
- i.e., from the root of the project (where <code>./include</code> is located), type</p>
+<p>The current version of the repository has a <code>CMakeLists.txt</code> configuration file
+for building examples using <code>cmake</code> (<code>cmake</code> needs to be installed). 
+To build an example using <code>cmake</code>, I recommend an out-of-source build, i.e., 
+from the root of the project (where <code>./include</code> is located), type</p>
 
 <pre><code>mkdir ./build
 cd ./build
@@ -173,7 +173,7 @@ cmake -DCMAKE_BUILD_TYPE=Debug -DWITH_MATLAB=ON ..
 make
 </code></pre>
 
-<p>Or, to disable OpenMP support (enabled by default), type</p>
+<p>Or, to disable <a href="http://openmp.org/">OpenMP</a> support (enabled by default), type</p>
 
 <pre><code>cd ./build
 rm -rf *
@@ -193,9 +193,9 @@ before a fresh build!</p>
 
 <ul>
 <li><p>The C++ compiler must be C++11 compliant.</p></li>
-<li><p>If your compiler does not support OpenMP 
-(as it is the case e.g with <code>clang++</code>), disable OpenMP it in your build, 
-as otherwise the linker may not find the <code>gomp</code> library.</p></li>
+<li><p>If your compiler does not support <a href="http://openmp.org/">OpenMP</a> 
+(as it is the case e.g with <code>clang++</code>), disable <a href="http://openmp.org/">OpenMP</a>
+in your build, as otherwise the linker may not find the <code>gomp</code> library.</p></li>
 <li>
 <p>If you run the program on OS X with MATLAB support, make sure that 
 the environment variable <code>DYLD_LIBRARY_PATH</code> is set to point to the MATLAB 
