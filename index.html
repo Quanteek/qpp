@@ -81,16 +81,21 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration:</h3>
 
 <ul>
-<li>Compiler: <code>g++</code> &gt;= 4.8 (for good C++11 support)</li>
+<li>Compiler: <a href="https://gcc.gnu.org/">g++</a> version 4.8 or later 
+(for good C++11 support)</li>
 <li>
 <a href="http://eigen.tuxfamily.org">Eigen 3</a> library located in <code>$HOME/eigen</code>
 </li>
 <li>Quantum++ library located in <code>$HOME/qpp</code>
 </li>
-<li>MATLAB compiler include header files:
+<li>
+<a href="http://www.mathworks.com/products/matlab/">MATLAB</a> compiler 
+include header files:
 <code>/Applications/MATLAB_R2014b.app/extern/include</code>
 </li>
-<li>MATLAB compiler shared library files:
+<li>
+<a href="http://www.mathworks.com/products/matlab/">MATLAB</a> compiler 
+shared library files:
 <code>/Applications/MATLAB_R2014b.app/bin/maci64</code>
 </li>
 </ul>
@@ -107,7 +112,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </ul>
 
 <h4>
-<a id="release-version-without-matlab-support" class="anchor" href="#release-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (without MATLAB support):</h4>
+<a id="release-version-without-matlab-support" class="anchor" href="#release-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (without <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
@@ -116,7 +121,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </code></pre>
 
 <h4>
-<a id="debug-version-without-matlab-support" class="anchor" href="#debug-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (without MATLAB support):</h4>
+<a id="debug-version-without-matlab-support" class="anchor" href="#debug-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (without <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -g3 -DDEBUG \
@@ -125,7 +130,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </code></pre>
 
 <h4>
-<a id="release-version-with-matlab-support" class="anchor" href="#release-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (with MATLAB support):</h4>
+<a id="release-version-with-matlab-support" class="anchor" href="#release-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (with <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
@@ -136,7 +141,7 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </code></pre>
 
 <h4>
-<a id="debug-version-with-matlab-support" class="anchor" href="#debug-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (with MATLAB support):</h4>
+<a id="debug-version-with-matlab-support" class="anchor" href="#debug-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (with <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -g3 -DDEBUG \
@@ -147,13 +152,14 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </code></pre>
 
 <h3>
-<a id="building-using-cmake" class="anchor" href="#building-using-cmake" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <code>cmake</code>
+<a id="building-using-cmake" class="anchor" href="#building-using-cmake" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <a href="http://www.cmake.org/">cmake</a>
 </h3>
 
 <p>The current version of the repository has a <code>CMakeLists.txt</code> configuration file
-for building examples using <code>cmake</code> (<code>cmake</code> needs to be installed). 
-To build an example using <code>cmake</code>, I recommend an out-of-source build, i.e., 
-from the root of the project (where <code>./include</code> is located), type</p>
+for building examples using <a href="http://www.cmake.org/">cmake</a>. 
+To build an example using <a href="http://www.cmake.org/">cmake</a>, 
+I recommend an out-of-source build, i.e., from the root of the project 
+(where <code>./include</code> is located), type</p>
 
 <pre><code>mkdir ./build
 cd ./build
@@ -163,9 +169,10 @@ make
 
 <p>The above commands build the relase version (default) executable <code>qpp</code>, 
 from the source file <code>./examples/example.cpp</code>,
-without MATLAB support (default), inside the directory <code>./build</code>. 
-To build a different configuration, e.g. debug version with MATLAB support, 
-type from the root of the project</p>
+without <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support (default), 
+inside the directory <code>./build</code>. To build a different configuration, 
+e.g. debug version with <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> 
+support, type from the root of the project</p>
 
 <pre><code>cd ./build
 rm -rf *
@@ -183,11 +190,10 @@ make
 
 <p>To change the name of the example file, the location of the
 <a href="http://eigen.tuxfamily.org">Eigen 3</a>
-library or the location of MATLAB installation, 
-edit the <code>CMakeLists.txt</code> file. See also <code>CMakeLists.txt</code> 
-for additional options. 
-Do not forget to remove everything from the <code>./build</code> directory 
-before a fresh build!</p>
+library or the location of <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> 
+installation, edit the <code>CMakeLists.txt</code> file. See also <code>CMakeLists.txt</code> 
+for additional options. Do not forget to remove everything from 
+the <code>./build</code> directory before a fresh build!</p>
 
 <h3>
 <a id="additional-remarks" class="anchor" href="#additional-remarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional remarks</h3>
@@ -195,21 +201,27 @@ before a fresh build!</p>
 <ul>
 <li><p>The C++ compiler must be C++11 compliant.</p></li>
 <li><p>If your compiler does not support <a href="http://openmp.org/">OpenMP</a> 
-(as it is the case e.g with <code>clang++</code>), disable <a href="http://openmp.org/">OpenMP</a>
-in your build, as otherwise the linker may not find the <code>gomp</code> library.</p></li>
+(as it is the case e.g with <a href="http://clang.llvm.org/">clang++</a>), 
+disable <a href="http://openmp.org/">OpenMP</a> in your build, 
+as otherwise the linker may not find the 
+<a href="https://gcc.gnu.org/projects/gomp/">gomp</a> library.</p></li>
 <li>
-<p>If you run the program on OS X with MATLAB support, make sure that 
-the environment variable <code>DYLD_LIBRARY_PATH</code> is set to point to the MATLAB 
+<p>If you run the program on OS X with 
+<a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support, make sure that 
+the environment variable <code>DYLD_LIBRARY_PATH</code> is set to point to the 
+<a href="http://www.mathworks.com/products/matlab/">MATLAB</a> 
 compiler library location, see the <code>run_OSX_MATLAB</code> script. 
 Otherwise, you will get a runtime error like 
 <code>dyld: Library not loaded: @rpath/libmat.dylib</code>.</p>
 
 <ul>
 <li><p>I recommend running via a script, as otherwise setting the 
-<code>DYLD_LIBRARY_PATH</code> globally may interfere with Macports' <code>cmake</code> 
-installation (in case you use <code>cmake</code> from <code>macports</code>). If you use a 
-script, then the environment variable is local to the script and does not
-interfere with the rest of the system.</p></li>
+<code>DYLD_LIBRARY_PATH</code> globally may interfere with 
+<a href="https://www.macports.org/">macports</a>' <a href="http://www.cmake.org/">cmake</a> 
+installation (in case you use <a href="http://www.cmake.org/">cmake</a> from 
+<a href="https://www.macports.org/">macports</a>). If you use a script, 
+then the environment variable is local to the script and 
+does not interfere with the rest of the system.</p></li>
 <li>
 <p>Example of running script, run from inside the directory where 
 the executable <code>qpp</code> is located:</p>
@@ -222,8 +234,9 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Applications/MATLAB_R2014b.app/bin
 </li>
 </ul>
 </li>
-<li><p>If you build a debug version with <code>g++</code> under OS X and use <code>gdb</code> to step 
-inside template functions you may want to add <code>-fno-weak</code> compiler flag. See 
+<li><p>If you build a debug version with <a href="https://gcc.gnu.org/">g++</a> under OS X and 
+use <a href="http://www.gnu.org/software/gdb/">gdb</a> to step inside template functions 
+you may want to add <code>-fno-weak</code> compiler flag. See 
 <a href="http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks">http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks</a>
 for more details about this problem.</p></li>
 </ul>
