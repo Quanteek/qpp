@@ -206,7 +206,7 @@ disable <a href="http://openmp.org/">OpenMP</a> in your build,
 as otherwise the linker may not find the 
 <a href="https://gcc.gnu.org/projects/gomp/">gomp</a> library.</p></li>
 <li>
-<p>If you run the program on OS X with 
+<p>If you run the program on <a href="http://www.apple.com/osx">OS X</a> with 
 <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support, make sure that 
 the environment variable <code>DYLD_LIBRARY_PATH</code> is set to point to the 
 <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> 
@@ -234,8 +234,9 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Applications/MATLAB_R2014b.app/bin
 </li>
 </ul>
 </li>
-<li><p>If you build a debug version with <a href="https://gcc.gnu.org/">g++</a> under OS X and 
-use <a href="http://www.gnu.org/software/gdb/">gdb</a> to step inside template functions 
+<li><p>If you build a debug version with <a href="https://gcc.gnu.org/">g++</a> under 
+<a href="http://www.apple.com/osx">OS X</a> and use 
+<a href="http://www.gnu.org/software/gdb/">gdb</a> to step inside template functions 
 you may want to add <code>-fno-weak</code> compiler flag. See 
 <a href="http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks">http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks</a>
 for more details about this problem.</p></li>
