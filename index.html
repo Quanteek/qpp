@@ -32,7 +32,9 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>
-<a id="version-07---22-april-2015" class="anchor" href="#version-07---22-april-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.7 - 22 April 2015</h2>
+<a id="version-08---8-may-2015" class="anchor" href="#version-08---8-may-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.8 - 8 May 2015</h2>
+
+
 
 <p>Quantum++ is a C++11 general purpose quantum computing library, composed 
 solely of template header files. It uses the 
@@ -204,8 +206,8 @@ under <a href="https://www.cygwin.com">cygwin</a> via <a href="http://www.cmake.
 and <a href="https://gcc.gnu.org/">g++</a>. 
 See also <a href="http://stackoverflow.com/questions/28997206/cygwin-support-for-c11-in-g4-9-2">http://stackoverflow.com/questions/28997206/cygwin-support-for-c11-in-g4-9-2</a>
 for a bug related to lack of support for some C++11 math functions, and
-how to fix it. Quick fix: patch the standard library header file <code>cmath</code> 
-using the patch <code>./cmath_cygwin.patch</code>.</p></li>
+how to fix it. Quick fix: patch the standard library header file <code>&lt;cmath&gt;</code> 
+using the provided patch <code>./cmath_cygwin.patch</code>.</p></li>
 <li><p>If your compiler does not support <a href="http://openmp.org/">OpenMP</a> 
 (as it is the case e.g with <a href="http://clang.llvm.org/">clang++</a>), 
 disable <a href="http://openmp.org/">OpenMP</a> in your build, 
