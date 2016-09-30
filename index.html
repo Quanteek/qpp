@@ -32,7 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>
-<a id="version-086---1-november-2015" class="anchor" href="#version-086---1-november-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.8.6 - 1 November 2015</h2>
+<a id="version-088---29-september-2016" class="anchor" href="#version-088---29-september-2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version 0.8.8 - 29 September 2016</h2>
 
 <p>Quantum++ is a C++11 general purpose quantum computing library, composed 
 solely of template header files. Quantum++ is written in standard C++11 and 
@@ -77,13 +77,13 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <hr>
 
 <h2>
-<a id="building-instructions" class="anchor" href="#building-instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building instructions</h2>
+<a id="building-instructions" class="anchor" href="#building-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building instructions</h2>
 
 <h3>
-<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration:</h3>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration:</h3>
 
 <ul>
-<li>Compiler: <a href="https://gcc.gnu.org/">g++</a> version 4.8 or later 
+<li>Compiler: <a href="https://gcc.gnu.org/">g++</a> version 4.8.2 or later 
 (for good C++11 support)</li>
 <li>
 <a href="http://eigen.tuxfamily.org">Eigen 3</a> library located in <code>$HOME/eigen</code>
@@ -93,17 +93,17 @@ along with Quantum++.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 <li>
 <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> compiler 
 include header files:
-<code>/Applications/MATLAB_R2015b.app/extern/include</code>
+<code>/Applications/MATLAB_R2016a.app/extern/include</code>
 </li>
 <li>
 <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> compiler 
 shared library files:
-<code>/Applications/MATLAB_R2015b.app/bin/maci64</code>
+<code>/Applications/MATLAB_R2016a.app/bin/maci64</code>
 </li>
 </ul>
 
 <h3>
-<a id="building-without-a-build-system" class="anchor" href="#building-without-a-build-system" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building without a build system</h3>
+<a id="building-without-a-build-system" class="anchor" href="#building-without-a-build-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building without a build system</h3>
 
 <ul>
 <li>Example file: <code>$HOME/qpp/examples/minimal.cpp</code>
@@ -114,7 +114,7 @@ shared library files:
 </ul>
 
 <h4>
-<a id="release-version-without-matlab-support" class="anchor" href="#release-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (without <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
+<a id="release-version-without-matlab-support" class="anchor" href="#release-version-without-matlab-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release version (without <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
@@ -123,7 +123,7 @@ shared library files:
 </code></pre>
 
 <h4>
-<a id="debug-version-without-matlab-support" class="anchor" href="#debug-version-without-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (without <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
+<a id="debug-version-without-matlab-support" class="anchor" href="#debug-version-without-matlab-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Debug version (without <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -g3 -DDEBUG \
@@ -132,33 +132,32 @@ shared library files:
 </code></pre>
 
 <h4>
-<a id="release-version-with-matlab-support" class="anchor" href="#release-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release version (with <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
+<a id="release-version-with-matlab-support" class="anchor" href="#release-version-with-matlab-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release version (with <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -O3 -DNDEBUG -DEIGEN_NO_DEBUG \
      -isystem $HOME/eigen -I $HOME/qpp/include \
-     -I/Applications/MATLAB_R2015b.app/extern/include \
-     -L/Applications/MATLAB_R2015b.app/bin/maci64 \
+     -I/Applications/MATLAB_R2016a.app/extern/include \
+     -L/Applications/MATLAB_R2016a.app/bin/maci64 \
      -lmx -lmat minimal.cpp -o minimal
 </code></pre>
 
 <h4>
-<a id="debug-version-with-matlab-support" class="anchor" href="#debug-version-with-matlab-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debug version (with <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
+<a id="debug-version-with-matlab-support" class="anchor" href="#debug-version-with-matlab-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Debug version (with <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support):</h4>
 
 <pre><code>g++ -pedantic -std=c++11 -Wall -Wextra -Weffc++ -fopenmp \
      -g3 -DDEBUG \
      -isystem $HOME/eigen -I $HOME/qpp/include \
-     -I /Applications/MATLAB_R2015b.app/extern/include \
-     -L /Applications/MATLAB_R2015b.app/bin/maci64 \
+     -I /Applications/MATLAB_R2016a.app/extern/include \
+     -L /Applications/MATLAB_R2016a.app/bin/maci64 \
      -lmx -lmat minimal.cpp -o minimal
 </code></pre>
 
 <h3>
-<a id="building-using-cmake" class="anchor" href="#building-using-cmake" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building using <a href="http://www.cmake.org/">cmake</a>
-</h3>
+<a id="building-using-cmake-version-30-or-later" class="anchor" href="#building-using-cmake-version-30-or-later" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building using <a href="http://www.cmake.org/">cmake</a> (version 3.0 or later)</h3>
 
-<p>The current version of the repository has a <code>./CMakeLists.txt</code> configuration file
-for building examples using <a href="http://www.cmake.org/">cmake</a>. 
+<p>The current version of the repository has a <code>./CMakeLists.txt</code> configuration 
+file for building examples using <a href="http://www.cmake.org/">cmake</a>. 
 To build an example using <a href="http://www.cmake.org/">cmake</a>, 
 I recommend an out-of-source build, i.e., from the root of the project 
 (where <code>./include</code> is located), type</p>
@@ -198,14 +197,14 @@ for additional options. Do not forget to remove everything from
 the <code>./build</code> directory before a fresh build!</p>
 
 <h3>
-<a id="additional-remarks" class="anchor" href="#additional-remarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional remarks</h3>
+<a id="additional-remarks" class="anchor" href="#additional-remarks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional remarks</h3>
 
 <ul>
 <li><p>The C++ compiler must be C++11 compliant.</p></li>
 <li><p>If using <a href="http://windows.microsoft.com/">Windows</a>, I recommend compiling 
 under <a href="https://www.cygwin.com">cygwin</a> via <a href="http://www.cmake.org/">cmake</a>
-and <a href="https://gcc.gnu.org/">g++</a>. 
-See also <a href="http://stackoverflow.com/questions/28997206/cygwin-support-for-c11-in-g4-9-2">http://stackoverflow.com/questions/28997206/cygwin-support-for-c11-in-g4-9-2</a>
+and <a href="https://gcc.gnu.org/">g++</a>. See also 
+<a href="http://stackoverflow.com/questions/28997206/cygwin-support-for-c11-in-g4-9-2">http://stackoverflow.com/questions/28997206/cygwin-support-for-c11-in-g4-9-2</a>
 for a bug related to lack of support for some C++11 math functions, and
 how to fix it. Quick fix: patch the standard library header file <code>&lt;cmath&gt;</code> 
 using the provided patch <code>./cmath_cygwin.patch</code>.</p></li>
@@ -237,7 +236,7 @@ of Quantum++:</p>
 
 <pre><code>#!/bin/sh
 
-MATLAB=/Applications/MATLAB_R2015b.app
+MATLAB=/Applications/MATLAB_R2016a.app
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$MATLAB/bin/maci64
 
 ./build/qpp
