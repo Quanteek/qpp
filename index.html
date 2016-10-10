@@ -32,7 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>
-<a id="version-0882---3-october-2016" class="anchor" href="#version-0882---3-october-2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version 0.8.8.2 - 3 October 2016</h2>
+<a id="version-100-beta1---10-october-2016" class="anchor" href="#version-100-beta1---10-october-2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version 1.0.0-beta1 - 10 October 2016</h2>
 
 <p>Quantum++ is a C++11 general purpose quantum computing library, composed 
 solely of template header files. Quantum++ is written in standard C++11 and 
@@ -154,7 +154,7 @@ shared library files:
 </code></pre>
 
 <h3>
-<a id="building-using-cmake-version-30-or-later" class="anchor" href="#building-using-cmake-version-30-or-later" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building using <a href="http://www.cmake.org/">cmake</a> (version 3.0 or later)</h3>
+<a id="building-using-cmake-version-300-or-later" class="anchor" href="#building-using-cmake-version-300-or-later" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building using <a href="http://www.cmake.org/">cmake</a> (version 3.0.0 or later)</h3>
 
 <p>The current version of the repository has a <code>./CMakeLists.txt</code> configuration 
 file for building examples using <a href="http://www.cmake.org/">cmake</a>. 
@@ -195,6 +195,21 @@ library or the location of <a href="http://www.mathworks.com/products/matlab/">M
 installation, edit the <code>./CMakeLists.txt</code> file. See also <code>./CMakeLists.txt</code> 
 for additional options. Do not forget to remove everything from 
 the <code>./build</code> directory before a fresh build!</p>
+
+<h3>
+<a id="unit-testing" class="anchor" href="#unit-testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unit testing</h3>
+
+<p><a href="https://github.com/google/googletest">Google Mock 1.7.0</a> is included with 
+the project. I strongly recommend to use <a href="http://www.cmake.org/">cmake</a> 
+version 3.0.0 or later as a building system. By default the current 
+<code>CMakeLists.txt</code> automatically builds all unit tests as 
+<code>./build/unit_tests/tests/qpp_testing</code>. To disable automatic building of unit 
+tests, type  </p>
+
+<pre><code>cmake -DWITH_UNIT_TESTS=OFF ..
+</code></pre>
+
+<p>from inside <code>./build</code>.</p>
 
 <h3>
 <a id="additional-remarks" class="anchor" href="#additional-remarks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional remarks</h3>
