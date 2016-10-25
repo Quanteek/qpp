@@ -34,7 +34,7 @@
         <h2>
 <a id="version-100-beta3---22-october-2016" class="anchor" href="#version-100-beta3---22-october-2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version 1.0.0-beta3 - 22 October 2016</h2>
 
-<p><strong>Build status :</strong>
+<p><strong>Build status:</strong>
 Master
 <a href="https://travis-ci.org/vsoftco/qpp"><img src="https://api.travis-ci.org/vsoftco/qpp.svg?branch=master" alt="Build Status"></a>
 Devel
@@ -252,7 +252,7 @@ in a different location than the one assumed in this document.</p>
 <a id="additional-remarks" class="anchor" href="#additional-remarks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional remarks</h3>
 
 <ul>
-<li><p>The C++ compiler must be C++11 compliant.</p></li>
+<li><p>The C++ compiler must be fully standard-C++11 compliant.</p></li>
 <li><p>If using <a href="http://windows.microsoft.com/">Windows</a>, I recommend compiling 
 under <a href="https://www.cygwin.com">cygwin</a> via <a href="http://www.cmake.org/">CMake</a>
 and <a href="https://gcc.gnu.org/">g++</a>. See also 
@@ -260,11 +260,15 @@ and <a href="https://gcc.gnu.org/">g++</a>. See also
 for a bug related to lack of support for some C++11 math functions, and
 how to fix it. Quick fix: patch the standard library header file <code>&lt;cmath&gt;</code> 
 using the provided patch <code>./cmath_cygwin.patch</code>.</p></li>
-<li><p>If your compiler does not support <a href="http://openmp.org/">OpenMP</a> 
-(as it is the case e.g with <a href="http://clang.llvm.org/">clang++</a> pre version 3.7), 
-disable <a href="http://openmp.org/">OpenMP</a> in your build, 
-as otherwise the linker may not find the 
-<a href="https://gcc.gnu.org/projects/gomp/">gomp</a> library.</p></li>
+<li><p>In case you use <a href="http://www.apple.com/osx">OS X</a> and want to install
+<a href="http://clang.llvm.org/">clang++</a> version 3.7 or later, I highly recommend 
+to install it via <a href="https://www.macports.org/">macports</a>. </p></li>
+<li><p>If you use <a href="http://clang.llvm.org/">clang++</a> version 3.7 or later and want 
+to use <a href="http://openmp.org/">OpenMP</a> (enabled by default), make sure to modify 
+<code>CLANG_LIBOMP</code> and <code>CLANG_LIBOMP_INCLUDE</code> in <code>CMakeLists.txt</code> so they point to 
+the correct location of the <a href="http://openmp.org/">OpenMP</a> library, as otherwise 
+<a href="http://clang.llvm.org/">clang++</a> will not find <code>&lt;omp.h&gt;</code> and the <code>libomp</code> 
+shared library. </p></li>
 <li>
 <p>If you run the program on <a href="http://www.apple.com/osx">OS X</a> with 
 <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support, make sure that 
