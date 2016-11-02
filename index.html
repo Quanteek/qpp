@@ -32,7 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>
-<a id="version-100-beta3---22-october-2016" class="anchor" href="#version-100-beta3---22-october-2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version 1.0.0-beta3 - 22 October 2016</h2>
+<a id="version-100-beta4---2-november-2016" class="anchor" href="#version-100-beta4---2-november-2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version 1.0.0-beta4 - 2 November 2016</h2>
 
 <p><strong>Build status:</strong>
 Master
@@ -260,7 +260,7 @@ and <a href="https://gcc.gnu.org/">g++</a>. See also
 for a bug related to lack of support for some C++11 math functions, and
 how to fix it. Quick fix: patch the standard library header file <code>&lt;cmath&gt;</code> 
 using the provided patch <code>./cmath_cygwin.patch</code>.</p></li>
-<li><p>In case you use <a href="http://www.apple.com/osx">OS X</a> and want to install
+<li><p>In case you use <a href="http://www.apple.com/osx">OS X/macOS</a> and want to install
 <a href="http://clang.llvm.org/">clang++</a> version 3.7 or later, I highly recommend 
 to install it via <a href="https://www.macports.org/">macports</a>. </p></li>
 <li><p>If you use <a href="http://clang.llvm.org/">clang++</a> version 3.7 or later and want 
@@ -270,11 +270,11 @@ the correct location of the <a href="http://openmp.org/">OpenMP</a> library, as 
 <a href="http://clang.llvm.org/">clang++</a> will not find <code>&lt;omp.h&gt;</code> and the <code>libomp</code> 
 shared library. </p></li>
 <li>
-<p>If you run the program on <a href="http://www.apple.com/osx">OS X</a> with 
+<p>If you run the program on <a href="http://www.apple.com/osx">OS X/macOS</a> with 
 <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> support, make sure that 
 the environment variable <code>DYLD_LIBRARY_PATH</code> is set to point to the 
 <a href="http://www.mathworks.com/products/matlab/">MATLAB</a> 
-compiler library location, see the <code>run_OSX_MATLAB</code> script. 
+compiler library location, see the <code>run_mac_MATLAB</code> script. 
 Otherwise, you get a runtime error similar to  </p>
 
 <blockquote>
@@ -304,7 +304,7 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$MATLAB/bin/maci64
 </ul>
 </li>
 <li><p>If you build a debug version with <a href="https://gcc.gnu.org/">g++</a> under 
-<a href="http://www.apple.com/osx">OS X</a> and use 
+<a href="http://www.apple.com/osx">OS X/macOS</a> and use 
 <a href="http://www.gnu.org/software/gdb/">gdb</a> to step inside template functions 
 you may want to add <code>-fno-weak</code> compiler flag. See 
 <a href="http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks">http://stackoverflow.com/questions/23330641/gnu-gdb-can-not-step-into-template-functions-os-x-mavericks</a>
